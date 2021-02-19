@@ -6,16 +6,6 @@ const constantsAxios = require('./../constants/axios')
 let headers = constantsAxios.headers
 
 class ZingMp3Controller {
-    constructor() {
-        async () => {
-            const rqid = await helpers.getCookieZing(axios);
-            headers = {
-                ...headers,
-                Cookie: rqid
-            }
-        }
-    }
-
     /**
      * Tìm kiếm bài hát
      * @param {*} req 
@@ -42,7 +32,9 @@ class ZingMp3Controller {
                     version: '1.0.22',
                     apiKey: process.env.API_KEY
                 },
-                headers
+                headers: {
+                    Cookie: await helpers.getCookieZing(axios)
+                }
             })
 
             res.json({
@@ -81,7 +73,9 @@ class ZingMp3Controller {
                     version: '1.0.22',
                     apiKey: process.env.API_KEY
                 },
-                headers
+                headers: {
+                    Cookie: await helpers.getCookieZing(axios)
+                }
             })
 
             res.json({
@@ -120,7 +114,9 @@ class ZingMp3Controller {
                     version: '1.0.22',
                     apiKey: process.env.API_KEY
                 },
-                headers
+                headers: {
+                    Cookie: await helpers.getCookieZing(axios)
+                }
             })
 
             res.json({
