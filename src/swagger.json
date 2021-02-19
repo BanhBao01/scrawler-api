@@ -1,0 +1,87 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "title": "Danh sách apis crawler",
+        "description": "",
+        "version": "1.0"
+    },
+    "produces": [
+        "application/json"
+    ],
+    "host": "localhost:3000",
+    "basePath": "/api/v1",
+    "paths": {
+        "/zing-mp3/search": {
+            "get": {
+                "summary": "Tìm danh sách bài hát",
+                "tags": [
+                    "Zing Mp3 Api"
+                ],
+                "description": "Tìm danh sách bài hát",
+                "parameters": [
+                    {
+                        "in": "query",
+                        "name": "q",
+                        "required": true,
+                        "value": "Yêu em không vi nhan sắc",
+                        "schema": {
+                            "type": "string"
+                        },
+                        "allowReserved": true
+                    }
+                ],
+                "responses": {
+                    "200": {}
+                }
+            }
+        },
+        "/zing-mp3/playlistDetail": {
+            "get": {
+                "summary": "Lấy chi tiết playlist",
+                "tags": [
+                    "Zing Mp3 Api"
+                ],
+                "description": "Lấy chi tiết playlist",
+                "parameters": [
+                    {
+                        "in": "query",
+                        "name": "idPlaylist",
+                        "required": true,
+                        "value": "ZWZAOD9A",
+                        "schema": {
+                            "type": "string"
+                        },
+                        "allowReserved": true
+                    }
+                ],
+                "responses": {
+                    "200": {}
+                }
+            }
+        },
+        "/zing-mp3/getStreaming": {
+            "get": {
+                "summary": "Lấy link stream bài hát",
+                "tags": [
+                    "Zing Mp3 Api"
+                ],
+                "description": "Lấy link stream bài hát",
+                "parameters": [
+                    {
+                        "in": "query",
+                        "name": "idSong",
+                        "required": true,
+                        "value": "ZWZD68ZE",
+                        "schema": {
+                            "type": "string"
+                        },
+                        "allowReserved": true
+                    }
+                ],
+                "responses": {
+                    "200": {}
+                }
+            }
+        }
+    }
+}
